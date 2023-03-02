@@ -11,6 +11,7 @@ public class FamilyTree
     FamilyTree(String familyName)
     {
         _familyName = familyName;
+        _memebers = new ArrayList<FamilyMemeber>();
     }
 
     public int Total()
@@ -39,6 +40,11 @@ public class FamilyTree
         var child = new FamilyMemeber(_memebers.size(), name + " " + _familyName, sex, birthDay, parent);
         _memebers.add(child);
         return child;
+    }
+
+    public FamilyMemeber AddChild(String name, String sex, Date birthDay)
+    {
+        return AddChild(name, sex, birthDay, _memebers.size());
     }
 
     @Override
